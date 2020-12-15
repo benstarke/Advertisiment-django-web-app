@@ -1,0 +1,46 @@
+{% extends 'myadvert/base.html' %}
+
+ {% block content %}
+<!-- Grid row -->
+<div class="row">
+    <!-- Grid column -->{% if pic in pic %}
+    <div class="col-xl-5 col-md-4 mb-3 text-center">
+        <img src="{{pic.image.url}}" class="img-fluid z-depth-1 rounded-circle"
+          alt="Responsive image">
+      </div>
+    <!-- Grid column -->
+    <div class="col-xl-6 col-md-10 mb-3" style="border: 1px solid black; border-radius: 4px;">
+      {{pic.description}}
+    </div>
+    <!-- Grid column -->{% endif %}
+  </div>
+  <!-- Grid row -->
+
+  <p><h1 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">SOME OF OUR CLIENTS.
+</h1></p>
+
+  <div class="row row-cols-1 row-cols-md-2">
+    <div class="col mb-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->{% for exp in exp %}
+        <div class="view overlay">
+          <img class="card-img-top" src="{{exp.image.url}}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h4 class="card-title">{{exp.title}}</h4>
+          <!--Text-->
+          <p class="card-text">{{exp.description}}</p>
+          <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        </div>{% endfor %}
+      </div>
+    </div>
+      <!-- Card -->
+  </div>
+  {% endblock %}
