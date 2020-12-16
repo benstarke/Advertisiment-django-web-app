@@ -1,7 +1,7 @@
 {% extends 'myadvert/base.html' %}
 
  {% block content %}
-<!-- Grid row -->{% for pic in pic %}
+<!-- Grid row -->{% if pic  %}
 <div class="row">
     <!-- Grid column -->
     <div class="col-xl-5 col-md-4 mb-3 text-center">
@@ -13,7 +13,7 @@
       {{pic.description}}
     </div>
     <!-- Grid column -->
-  </div>{% endfor %}
+  </div>{% endif %}
   <!-- Grid row -->
 
   <p><h1 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">SOME OF OUR CLIENTS.
