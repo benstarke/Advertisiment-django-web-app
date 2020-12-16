@@ -11,7 +11,7 @@ def home(request):
            # 'seen':seen,
             'slides':slides
     }
-    return render(request,'myadvert/index.html',{})
+    return render(request,'myadvert/index.html',context)
 
 
 
@@ -22,7 +22,7 @@ def about(request):
             'exp':exp,
             'pic':pic
     }
-    return render(request,'myadvert/About.html',{})
+    return render(request,'myadvert/About.html',context)
 
 def services(request):
     service = myservices.objects.all()
