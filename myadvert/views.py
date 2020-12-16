@@ -16,7 +16,7 @@ def home(request):
 
 
 def about(request):
-    exp = workexperience.objects.all()
+    #exp = workexperience.objects.all()
     pic = myprofile.objects.all()
     context = {
             'exp':exp,
