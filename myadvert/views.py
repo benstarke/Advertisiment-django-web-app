@@ -22,7 +22,7 @@ def about(request):
             'exp':exp,
             'pic':pic
     }
-    return render(request,'myadvert/about.html',{})
+    return render(request,'myadvert/About.html',{})
 
 def services(request):
     service = myservices.objects.all()
