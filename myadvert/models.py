@@ -37,8 +37,6 @@ class slider(models.Model):
     class Meta:
         verbose_name_plural = 'slider'
 
-    def __str__(self):
-        return self.image
 
 
 #about page models
