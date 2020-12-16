@@ -8,7 +8,7 @@ def home(request):
     slides = slider.objects.all()
     #seen = index.objects.all()
     context = {
-            'seen':seen,
+           # 'seen':seen,
             'slides':slides
     }
     return render(request,'myadvert/index.html',{})
