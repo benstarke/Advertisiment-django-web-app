@@ -3,7 +3,7 @@
  {% block content %}
 <!-- Grid row -->
 <div class="row">
-    <!-- Grid column -->
+    <!-- Grid column -->{% for pic in pic %}
     <div class="col-xl-5 col-md-4 mb-3 text-center">
         <img src="{{pic.image.url}}" class="img-fluid z-depth-1 rounded-circle"
           alt="Responsive image">
@@ -11,7 +11,7 @@
     <!-- Grid column -->
     <div class="col-xl-6 col-md-10 mb-3" style="border: 1px solid black; border-radius: 4px;">
       {{pic.description}}
-    </div>
+    </div>{% endfor %}
     <!-- Grid column -->
   </div>
   <!-- Grid row -->
