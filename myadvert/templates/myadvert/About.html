@@ -1,9 +1,9 @@
 {% extends 'myadvert/base.html' %}
 
  {% block content %}
-<!-- Grid row -->{% for object in myprofile%}
+<!-- Grid row -->
 <div class="row">
-    <!-- Grid column -->
+    <!-- Grid column -->{% for object in myprofile%}
     <div class="col-xl-5 col-md-4 mb-3 text-center">
         <img src="{{object.image.url}}" class="img-fluid z-depth-1 rounded-circle"
           alt="Responsive image">
@@ -11,9 +11,9 @@
     <!-- Grid column -->
     <div class="col-xl-6 col-md-10 mb-3" style="border: 1px solid black; border-radius: 4px;">
       {{obj.description}}
-    </div>
+    </div>{% endfor %}
     <!-- Grid column -->
-  </div>{% endfor %}
+  </div>
   <!-- Grid row -->
 
   <p><h1 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">SOME OF OUR CLIENTS.
