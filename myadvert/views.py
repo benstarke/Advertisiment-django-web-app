@@ -6,7 +6,7 @@ from .models import *
 
 def home(request):
     slides = slider.objects.all()
-    seen = index.objects.all()
+    #seen = index.objects.all()
     context = {
             'seen':seen,
             'slides':slides
@@ -16,7 +16,7 @@ def home(request):
 
 
 def about(request):
-    #exp = workexperience.objects.all()
+    exp = workexperience.objects.all()
     pic = myprofile.objects.all()
     context = {
             'exp':exp,
