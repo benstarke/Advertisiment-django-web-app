@@ -6,7 +6,7 @@
     <div class="carousel-inner">
       {% for slides in slides %}
       <div class="carousel-item {% if forloop.first %} active{% endif %}">
-        <div class="view d-block w-100" style="background-image: url({{slides.image.url}}); background-repeat: no-repeat; background-size: cover;">
+        <div class="view d-block w-100" style="background-image: url({{slides.image.url}}); background-size: cover;">
         </div>
       </div>
       {% endfor %}
