@@ -31,7 +31,7 @@ class slider(models.Model):
     #description = models.TextField()
     img = models.ImageField(upload_to='homepage')
     image = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            ResizeToFill(50, 50)], source='img',
+            ResizeToFill(300, 300)], source='img',
             format='PNG', options={'quality': 100})
 
     class Meta:
