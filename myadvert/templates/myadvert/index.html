@@ -15,9 +15,9 @@
 
    <!-- Card deck -->
 <div class="card-deck">
-  <!-- Card -->
+  <!-- Card -->{% for seen in seen %}
   <div class="card mb-4">
-    {% for seen in seen %}
+    
     <!--Card image-->
     <div class="view overlay">
       <img class="card-img-top" src="{{seen.image.url}}"
@@ -38,8 +38,8 @@
       </p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
     </div>
-    {% endfor %}
-  </div>
+    
+  </div>{% endfor %}
   <!-- Card -->
 </div>
 <!-- Card deck -->
