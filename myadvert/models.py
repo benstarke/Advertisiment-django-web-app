@@ -30,9 +30,8 @@ class slider(models.Model):
     #title = models.CharField(max_length=255)
     #description = models.TextField()
     img = models.ImageField(upload_to='homepage')
-    image = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            ResizeToFill(300, 300)], source='img',
-            format='PNG', options={'quality': 100})
+    image = ImageSpecField(source='img',processors=[ResizeToFill(1000, 1000)],
+            format='PNG', options={'quality': 90})
 
     class Meta:
         verbose_name_plural = 'slider'
