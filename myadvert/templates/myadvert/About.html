@@ -20,8 +20,9 @@
 </h1></p>
 
   <div class="row row-cols-1 row-cols-md-2">
+    {% for exp in exp %}
     <div class="col mb-4">
-      <!-- Card -->{% for exp in exp %}
+      <!-- Card -->
       <div class="card">
         <!--Card image-->
         <div class="view overlay">
@@ -39,8 +40,8 @@
           <p class="card-text">{{exp.description}}</p>
           <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
         </div>
-      </div>{% endfor %}
-    </div>
+      </div>
+    </div>{% endfor %}
       <!-- Card -->
   </div>
   {% endblock %}
