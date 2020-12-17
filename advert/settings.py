@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'advert.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'advert',
+        'NAME': 'advertisment',
         'USER': 'postgres',
         'PASSWORD': 'bb99GG00',
         'HOST': 'localhost',
@@ -145,9 +145,9 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 
-MEDIA_URL = '/images/'
+MEDIA_URL = '/image/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/image')
 
 
 AWS_ACCESS_KEY_ID = 'AKIAIBBGI3HYFGVI7GJQ'
@@ -170,7 +170,7 @@ DEFAULT_FILE_STORAGE = 'advert.storage_backends.MediaStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # stops IK checking S3 all the time - main reason to use IK v2 for me
-IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND = 'imagekit.imagecache.NonValidatingImageCacheBackend' 
+#IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND = 'imagekit.imagecache.NonValidatingImageCacheBackend' 
 
 #IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY = 'imagekit.cachefiles.strategies.Optimistic'
 
