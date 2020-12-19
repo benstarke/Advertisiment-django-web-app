@@ -1,47 +1,45 @@
 {% extends 'myadvert/base.html' %}
 
  {% block content %}
-<!-- Grid row -->
-<div class="row">
-    <!-- Grid column -->{% for object in pic %}
-    <div class="col-xl-5 col-md-4 mb-3 text-center">
-        <img src="{{object.image.url}}" class="img-fluid z-depth-1 rounded-circle"
-          alt="Responsive image">
-      </div>
-    <!-- Grid column -->
-    <div class="col-xl-6 col-md-10 mb-3" style="border: 1px solid black; border-radius: 4px;">
-      {{object.description}}
-    </div>{% endfor %}
-    <!-- Grid column -->
-  </div>
-  <!-- Grid row -->
-
-  <p><h1 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">SOME OF OUR CLIENTS.
-</h1></p>
-
-  <div class="row row-cols-1 row-cols-md-2">
-    {% for exp in exp %}
-    <div class="col mb-4">
-      <!-- Card -->
-      <div class="card">
-        <!--Card image-->
-        <div class="view overlay">
-          <img class="card-img-top" src="{{exp.image.url}}"
-            alt="Card image cap">
-          <a href="#!">
-            <div class="mask rgba-white-slight"></div>
-          </a>
+ <br/><br/>
+ <div class="container">
+  <div style="text-align:center ;">
+    <div class="card mb-3" style="max-width: 540px;">{% for i in pic %}
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{i.image.url}}" class="card-img" alt="...">
         </div>
-        <!--Card content-->
-        <div class="card-body">
-          <!--Title-->
-          <h4 class="card-title">{{exp.title}}</h4>
-          <!--Text-->
-          <p class="card-text">{{exp.description}}</p>
-          <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{i.title}}</h5>
+            <p class="card-text">{{i.description}}</p>
+            <p class="card-text"><small class="text-muted">{{i.title}}</small></p>
+          </div>
+        </div>{% endfor %}
       </div>
-    </div>{% endfor %}
-      <!-- Card -->
-  </div>
+    </div>
+    <br>
+    <div>
+      <div style="background-color: lightblue;color: rgb(9, 17, 14); text-align: center;">
+
+        <h4><marquee dir="left-right">RECENT SITES DESIGNED BY VORUFA COMPANY</marquee></h4>
+     
+       </div>
+  
+          <!--Card-->
+          <div class="col-sm-3">
+          <div class="card ">
+              <!--Card image-->
+              <div class="view">{% for i in exp %}
+                <img src="{{i.image.url}}" class="card-img-top"
+                  alt="photo">
+                  <h5 style="color: turquoise;">{{i.title}}L</h5>
+                  <p class="card-text">{{i.description}}</p> {% endfor %}
+              </div>
+            </div>    
+          </div>
+            <!--/.Card-->
+
+    </div><br>
+
   {% endblock %}

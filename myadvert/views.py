@@ -1,7 +1,19 @@
 from django.shortcuts import render
+from django.db.models import Q
 from django.views.generic import ListView
 from .models import *
+
 # Create your views here.
+
+
+def servicesview(request,slug):
+    obj = myservices.objects.all()
+    object_list = myservices.objects.filter(slug=slug)
+    context = {
+        'obj':obj,
+        'object_list':object_list
+    }
+    return render(request,'myadvert/services.html',context)
 
 
 def home(request):
@@ -24,9 +36,13 @@ def about(request):
     }
     return render(request,'myadvert/About.html',context)
 
-def services(request):
-    service = myservices.objects.all()
-    return render(request,'myadvert/services.html',{'service':service})
+
+
+
 
 def contact(request):
     return render(request,'myadvert/contact.html')
+
+
+def services(request):
+    return render(request,'myadvert/services.html')

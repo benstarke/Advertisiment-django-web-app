@@ -11,6 +11,7 @@ from pilkit.processors import Thumbnail
 #slider
 
 
+
 #homepage models
 class index(models.Model):
     title = models.CharField(max_length=255)
@@ -27,8 +28,8 @@ class index(models.Model):
 
 #slider model
 class slider(models.Model):
-    #title = models.CharField(max_length=255)
-    #description = models.TextField()
+    title = models.CharField(max_length=255,default=None)
+    description = models.TextField(default=None)
     img = models.ImageField(upload_to='homepage')
     image = ImageSpecField(source='img',processors=[ResizeToFill(1000, 1000)],
             format='PNG', options={'quality': 90})
@@ -58,8 +59,8 @@ class workexperience(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     img = models.ImageField(upload_to='myworkexperience')
-    image = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            ResizeToFill(50, 50)], source='img',
+    image = ImageSpecField([
+            ResizeToFill(150, 150)], source='img',
             format='PNG', options={'quality': 100})
 
     class Meta:
@@ -80,17 +81,15 @@ services = [
 ]
 
 class myservices(models.Model):
-    title = models.CharField(max_length=15,choices=services)
+    slug = models.SlugField(max_length=15,choices=services)
     description = models.TextField()
     img = models.ImageField(upload_to='services')
-    last_update = models.DateTimeField(timezone.now())
     image = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
             ResizeToFill(50, 50)], source='img',
             format='PNG', options={'quality': 100})
     
     class Meta:
-        ordering = ["-last_update"]
         verbose_name_plural = "myservices"
     
     def __str__(self):
-        return self.title
+        return self.slug

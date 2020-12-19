@@ -14,11 +14,11 @@ class workexperienceAdmin(admin.ModelAdmin):
 
 
 class myservicesAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description')
+    list_display = ('slug', 'description')
 
 
 admin.site.site_header = 'Bonface'
-
+admin.site.site_title =  'Enterprise'
 
 admin.site.register(index,indexAdmin)
 admin.site.register(slider)
