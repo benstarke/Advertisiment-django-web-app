@@ -31,7 +31,7 @@ class slider(models.Model):
     title = models.CharField(max_length=255,default=None)
     description = models.TextField(default=None)
     img = models.ImageField(upload_to='homepage')
-    image = ImageSpecField(source='img',processors=[ResizeToFill(1000, 1000)],
+    image = ImageSpecField(source='img',processors=[ResizeToFill(1500, 1500)],
             format='PNG', options={'quality': 90})
 
     class Meta:
@@ -44,8 +44,7 @@ class myprofile(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     img = models.ImageField(upload_to='profile')
-    image = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            ResizeToFill(374, 512)], source='img',
+    image = ImageSpecField(processors=[ResizeToFill(200, 100)], source='img',
             format='PNG', options={'quality': 100})
 
     class Meta:
@@ -59,8 +58,7 @@ class workexperience(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     img = models.ImageField(upload_to='myworkexperience')
-    image = ImageSpecField([
-            ResizeToFill(150, 150)], source='img',
+    image = ImageSpecField(processors=[ResizeToFill(200, 100)], source='img',
             format='PNG', options={'quality': 100})
 
     class Meta:
