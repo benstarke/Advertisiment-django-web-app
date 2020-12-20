@@ -84,8 +84,7 @@ class myservices(models.Model):
     slug = models.SlugField(max_length=15,choices=services)
     description = models.TextField()
     img = models.ImageField(upload_to='services')
-    image = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            ResizeToFill(50, 50)], source='img',
+    image = ImageSpecField(ResizeToFill(200, 100), source='img',
             format='PNG', options={'quality': 100})
     
     class Meta:
