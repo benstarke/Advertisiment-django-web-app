@@ -19,6 +19,10 @@
     <div class="col-lg-4">{% for seen in seen %}
       <div class="card">
         <div class="card-body">
+          <div class="view overlay">
+            <img src="{{ seen.image.url }}" class="card-img-top"
+              alt="">
+          </div>
           <h5 class="card-title">{{seen.title}}</h5>
           <p class="card-text">{{seen.description}}</p>
         </div>
