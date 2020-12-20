@@ -7,7 +7,6 @@ from .models import *
 
 
 def servicesview(request,slug):
-    obj = myservices.objects.all()
     object_list = myservices.objects.filter(slug=slug)
     context = {
         'obj':obj,
@@ -45,4 +44,8 @@ def contact(request):
 
 
 def services(request):
-    return render(request,'myadvert/services.html')
+    obj = myservices.objects.all()
+    context = {
+        'obj':obj,
+    }
+    return render(request,'myadvert/services.html',context)
