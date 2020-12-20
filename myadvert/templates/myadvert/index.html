@@ -13,11 +13,11 @@
   </div><hr style="background-color: #000000;"><br><h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">HOT PRODUCT SERVICES<span><i class="fa fa-thumbs-down"  aria-hidden="true"></i></span></h2><hr style="background-color: #000000;">
   
 
-   <!-- Card deck -->
+   <!-- Card deck --> {% for seen in seen %}
 <div class="card-deck">
   <!-- Card -->
   <div class="card mb-4">
-    {% for seen in seen %}
+   
     <!--Card image-->
     <div class="view overlay">
       <img class="card-img-top" src="{{seen.image.url}}"
@@ -38,10 +38,10 @@
       </p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
     </div>
-    {% endfor %}
+    
   </div>
   <!-- Card -->
-</div>
+</div>{% endfor %}
 <!-- Card deck -->
 
  {% endblock %}
