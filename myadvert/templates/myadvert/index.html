@@ -13,34 +13,18 @@
   </div><hr style="background-color: #000000;"><br><h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">HOT PRODUCT SERVICES<span><i class="fa fa-thumbs-down"  aria-hidden="true"></i></span></h2><hr style="background-color: #000000;">
   
 
-  
-  <section class="text-center mb-4 container">
-    <!--Grid row-->
-    <div class="row wow fadeIn">
-      <!--Grid column-->{% for seen in seen %}
-      <div class="col-lg-4 col-md-6 mb-4">
-        <!--Card-->
-        <div class="card">
-          <!--Card image-->
-          <div class="view overlay">
-            <img src="{{ seen.image.url }}" class="card-img-top"
-              alt="">
-          </div>
-          <!--Card image-->
-          <!--Card content-->
-          <div class="card-body text-center">
-            <!--Category & Title-->
-              <h5>{{seen.title}}</h5>
-              <p>{{seen.description}}</p>
-          </div>
-          <!--Card content-->
-        </div>
-        <!--Card-->
-  
+
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">{% for seen in seen %}
+        <div class="card-body">
+          <h5 class="card-title">{{seen.title}}</h5>
+          <p class="card-text">{{seen.description}}</p>
+        </div>{{% endfor %}}
       </div>
-      {% endfor %}
-      <!--Grid column-->
     </div>
-  </section>
+  
+ 
   
  {% endblock %}
