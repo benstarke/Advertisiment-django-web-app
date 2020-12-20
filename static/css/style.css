@@ -25,14 +25,11 @@ transition: transform 2s linear;
 }
 
 .car:hover{
-  
   transform: rotate(360deg);
-
 }
 
 
 /* contact*/
-
   .col-md-2:hover{
     background-color: rgb(190, 195, 204);
     border-radius: 3px;
