@@ -9,7 +9,6 @@ from .models import *
 def servicesview(request,slug):
     object_list = myservices.objects.filter(slug=slug)
     context = {
-        'obj':obj,
         'object_list':object_list
     }
     return render(request,'myadvert/services.html',context)
