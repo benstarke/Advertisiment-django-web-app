@@ -15,20 +15,23 @@
 
 
 
+
+
+
   <div class="row">
     {% for seen in seen %}
-    <div class="col-lg-4">
-      <div class="card">
-        <div class="card-body">
-          <div class="view overlay">
-            <img src="{{ seen.image.url }}" class="card-img-top"
-              alt="">
-          </div>
-          <h5 class="card-title">{{seen.title}}</h5>
-          <p class="card-text">{{seen.description}}</p>
-        </div>
+    <div class="col-sm-4">
+  <div class="card-group">
+    <div class="card">
+      <img class="card-img-top" src="{{ seen.image.url }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{seen.title}}</h5>
+        <p class="card-text">{{seen.description}}</p>
       </div>
-    </div>{% endfor %}
+    </div>
+    </div>
+    </div>
+    {% endfor %}
   </div>
  
   
